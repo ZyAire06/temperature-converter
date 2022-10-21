@@ -1,0 +1,41 @@
+
+.navBar{
+    list-style: none;
+    display:flex;
+    flex-flow: row wrap;
+      justify-content: space-between;
+      background-color: rgba(176, 97, 0, 0.278);
+}
+
+.navBar a{
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 500;
+    color: #000;
+}
+
+.navBar a:hover{
+    background-color: rgba(0, 0, 0, 0.078);
+    padding: 5px;
+    border-radius: 8px;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+form{
+    display: grid;
+    justify-items: center;          
+    row-gap: 30px;                                                                                                                                                                                                                                                                                                                            
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+}
+
+input[type=text]{
+    background-color: ;
+}

@@ -4,34 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
     <title>Celsius Convertor</title>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li>Home</li>
-                <li> Fahrenheit Convertor</li>
-                <li>Celsius Convertor</li>
+            <h1>Coverting Tempatures</h1>
+            
+            <ul class="navBar">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li> 
+                    <a href="c-to-f.html">Fahrenheit Convertor</a>
+                </li>
+                <li>
+                    <a href="f-to-c.html">Celsius Convertor</a>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Converting Fahrenheit to Celsuis </h1>
+        <h2>Converting Fahrenheit to Celsuis </h2>
 
         <form>
 
-            lable>Tempature in Fahrenheit</lable>
+            <label>Tempature in Fahrenheit</label>
             <input id= "fahrenField" type="text">
          
             <button id="convertBtn" type="button">Convert</button>
 
 
-            <lable> Tempature in Celsius</lable>
+            <label> Tempature in Celsius</label>
             <input  id= "celsField" type="text" readonly>
         </form>
-
+        <p id="error"></p>
     </main>
+    <script>
+        window.onload = init();
+
+        function init() {
+            let convertBtn = document.getElementById("convertBtn");
+
+            convertBtn.addEventListener("click", onConvertBtnClicked);
+        }
+
+        function onConvertBtnClicked() {
+            console.log("hey");
+
+
+            let celsField = document.getElementById("celsField");
+            let cels = Number(celsField.value);
+            let fahrenField = document.getElementById("fahrenField");
+            let fahren = Number(fahrenField.value);
+            let celsius=Math.ceil((cels*9/5)+32);
+            celsField.value = celsius;
+                   // error message if the input is a NAN
+          let error= document.getElementById("error");
+            if (isNAN(fahren)){
+                error.innerText= "Only use numbers";
+            }
+        
+        }
+          // error message if the input is a NAN
+        //   let error= document.getElementById("error");
+        //     if (isNAN(fahren)){
+        //         error.innerText= "Only use numbers";
+        //     }
+        
+    </script>
     
 </body>
 </html>

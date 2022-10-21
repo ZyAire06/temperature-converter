@@ -5,36 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
     <title>Fahrenheit Convertor</title>
+
 </head>
 
 <body>
     <header>
         <nav>
-            <ul>
-                <li>Home</li>
-                <li> Fahrenheit Convertor</li>
-                <li>Celsius Convertor</li>
+            <h1>Coverting Tempatures</h1>
+            
+            <ul class="navBar">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="c-to-f.html">Fahrenheit Convertor</a>
+                </li>
+                <li>
+                    <a href="f-to-c.html">Celsius Convertor</a>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Converting Celsuis to Fahrenheit</h1>
+        <h2>Converting Celsuis to Fahrenheit</h2>
 
         <form>
 
 
-            <lable> Tempature in Celsius</lable>
-            <input  id= "celsField" type="text">
-         
+            <label for="celsField"> Tempature in Celsius</label>
+            <input id="celsField" type="text">
+
             <button id="convertBtn" type="button">Convert</button>
 
-            <lable>Tempature in Fahrenheit</lable>
-            <input id= "fahrenField" type="text" readonly>
+            <label for="fahrenField">Tempature in Fahrenheit</label>
+            <input id="fahrenField" type="text" readonly>
         </form>
 
     </main>
-    <script src="../scripts/temp-convertor.js"></script>
+    <script>
+        window.onload = init();
+
+        function init() {
+            let convertBtn = document.getElementById("convertBtn");
+
+            convertBtn.addEventListener("click", onConvertBtnClicked);
+        }
+
+        function onConvertBtnClicked() {
+            console.log("hey");
+
+
+            let celsFieeld = document.getElementById("celsField");
+            let cels = Number(celsFieeld.value);
+            let fahrenField = document.getElementById("fahrenField");
+            let fahren = Number(fahrenField.value);
+            let fahrenheit = Math.ceil((cels*9/5)+32);
+            fahrenField.value = `${fahrenheit} degrees`;
+            console.log(fahrenheit);
+        }
+    </script>
 </body>
 
 </html>
