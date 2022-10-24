@@ -41,39 +41,7 @@
         </form>
         <p id="error"></p>
     </main>
-    <script>
-        window.onload = init();
-
-        function init() {
-            let convertBtn = document.getElementById("convertBtn");
-
-            convertBtn.addEventListener("click", onConvertBtnClicked);
-        }
-
-        function onConvertBtnClicked() {
-            console.log("hey");
-
-
-            let celsField = document.getElementById("celsField");
-            let cels = Number(celsField.value);
-            let fahrenField = document.getElementById("fahrenField");
-            let fahren = Number(fahrenField.value);
-            let celsius=Math.ceil((cels*9/5)+32);
-            celsField.value = celsius;
-                   // error message if the input is a NAN
-          let error= document.getElementById("error");
-            if (isNAN(fahren)){
-                error.innerText= "Only use numbers";
-            }
-        
-        }
-          // error message if the input is a NAN
-        //   let error= document.getElementById("error");
-        //     if (isNAN(fahren)){
-        //         error.innerText= "Only use numbers";
-        //     }
-        
-    </script>
+    <script src="../styles/styles.css"></script>
     
 </body>
 </html>

@@ -15,7 +15,7 @@
         <nav>
             <h1>Coverting Tempatures</h1>
             
-            <ul class="navBar">
+            <ul class="Bar">
                 <li>
                     <a href="../index.html">Home</a>
                 </li>
@@ -44,28 +44,7 @@
         </form>
 
     </main>
-    <script>
-        window.onload = init();
-
-        function init() {
-            let convertBtn = document.getElementById("convertBtn");
-
-            convertBtn.addEventListener("click", onConvertBtnClicked);
-        }
-
-        function onConvertBtnClicked() {
-            console.log("hey");
-
-
-            let celsFieeld = document.getElementById("celsField");
-            let cels = Number(celsFieeld.value);
-            let fahrenField = document.getElementById("fahrenField");
-            let fahren = Number(fahrenField.value);
-            let fahrenheit = Math.ceil((cels*9/5)+32);
-            fahrenField.value = `${fahrenheit} degrees`;
-            console.log(fahrenheit);
-        }
-    </script>
+    <script src="../styles/styles.css"></script>
 </body>
 
 </html>
